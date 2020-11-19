@@ -1,0 +1,6 @@
+framework module Pods_SKSPhotoManagerDemo {
+  umbrella header "Pods-SKSPhotoManagerDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

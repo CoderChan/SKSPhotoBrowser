@@ -1,0 +1,735 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B2661032566912A0005C1C2 /* UIView+SKSFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660D62566912A0005C1C2 /* UIView+SKSFrame.m */; };
+		1B2661042566912A0005C1C2 /* SKSPhotoResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660D72566912A0005C1C2 /* SKSPhotoResource.m */; };
+		1B2661052566912A0005C1C2 /* SKSPhotoRes.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B2660D82566912A0005C1C2 /* SKSPhotoRes.bundle */; };
+		1B2661062566912A0005C1C2 /* SKSPhotoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660DC2566912A0005C1C2 /* SKSPhotoConfig.m */; };
+		1B2661072566912A0005C1C2 /* SKSPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660DD2566912A0005C1C2 /* SKSPhotoBrowser.m */; };
+		1B2661082566912A0005C1C2 /* SKSPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660DE2566912A0005C1C2 /* SKSPhotoTool.m */; };
+		1B2661092566912A0005C1C2 /* SKSEditImageActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660E32566912A0005C1C2 /* SKSEditImageActionView.m */; };
+		1B26610A2566912A0005C1C2 /* SKSImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660E42566912A0005C1C2 /* SKSImageEditViewController.m */; };
+		1B26610B2566912A0005C1C2 /* SKSEditImageEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660E62566912A0005C1C2 /* SKSEditImageEditView.m */; };
+		1B26610C2566912A0005C1C2 /* SKSEditImageCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660E92566912A0005C1C2 /* SKSEditImageCaptureView.m */; };
+		1B26610D2566912A0005C1C2 /* SKSAlbumDetialController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660EE2566912A0005C1C2 /* SKSAlbumDetialController.m */; };
+		1B26610E2566912A0005C1C2 /* SKSAlbumListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660EF2566912A0005C1C2 /* SKSAlbumListController.m */; };
+		1B26610F2566912A0005C1C2 /* SKSPhotoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660F02566912A0005C1C2 /* SKSPhotoCollectionCell.m */; };
+		1B2661102566912A0005C1C2 /* SKSAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660F42566912A0005C1C2 /* SKSAssetModel.m */; };
+		1B2661112566912A0005C1C2 /* SKSAnimationImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660F52566912A0005C1C2 /* SKSAnimationImage.m */; };
+		1B2661122566912A0005C1C2 /* SKSAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660F62566912A0005C1C2 /* SKSAlbumModel.m */; };
+		1B2661132566912A0005C1C2 /* SKSAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660FA2566912A0005C1C2 /* SKSAnimationView.m */; };
+		1B2661142566912A0005C1C2 /* SKSCameroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660FC2566912A0005C1C2 /* SKSCameroViewController.m */; };
+		1B2661152566912A0005C1C2 /* SKSAlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660FD2566912A0005C1C2 /* SKSAlbumTableViewCell.m */; };
+		1B9F385C23F51C1500A47BA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F385B23F51C1500A47BA9 /* AppDelegate.m */; };
+		1B9F386723F51C1C00A47BA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B9F386623F51C1C00A47BA9 /* Assets.xcassets */; };
+		1B9F386D23F51C1C00A47BA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F386C23F51C1C00A47BA9 /* main.m */; };
+		1B9F387723F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F387623F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests.m */; };
+		1B9F388323F51E1B00A47BA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F388223F51E1B00A47BA9 /* ViewController.m */; };
+		3BD8B2122414BA5000D11D17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD8B2112414BA5000D11D17 /* LaunchScreen.storyboard */; };
+		6F22F3CA2EDA01187673A244 /* Pods_SKSPhotoManagerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85517A7D1E081DA291AB265 /* Pods_SKSPhotoManagerDemo.framework */; };
+		8E0065F301DFAE07BA8ABED5 /* Pods_SKSPhotoManagerDemo_SKSPhotoManagerDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C5155037717B5703AED206 /* Pods_SKSPhotoManagerDemo_SKSPhotoManagerDemoUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B9F387323F51C1D00A47BA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B9F384F23F51C1500A47BA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B9F385623F51C1500A47BA9;
+			remoteInfo = SKSPhotoManagerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10BACF69BC38C9C7CCC7A733 /* Pods-SKSPhotoManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSPhotoManagerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SKSPhotoManagerDemo/Pods-SKSPhotoManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		1B2660D62566912A0005C1C2 /* UIView+SKSFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SKSFrame.m"; sourceTree = "<group>"; };
+		1B2660D72566912A0005C1C2 /* SKSPhotoResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSPhotoResource.m; sourceTree = "<group>"; };
+		1B2660D82566912A0005C1C2 /* SKSPhotoRes.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SKSPhotoRes.bundle; sourceTree = "<group>"; };
+		1B2660D92566912A0005C1C2 /* UIView+SKSFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SKSFrame.h"; sourceTree = "<group>"; };
+		1B2660DA2566912A0005C1C2 /* SKSPhotoResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSPhotoResource.h; sourceTree = "<group>"; };
+		1B2660DC2566912A0005C1C2 /* SKSPhotoConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSPhotoConfig.m; sourceTree = "<group>"; };
+		1B2660DD2566912A0005C1C2 /* SKSPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSPhotoBrowser.m; sourceTree = "<group>"; };
+		1B2660DE2566912A0005C1C2 /* SKSPhotoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSPhotoTool.m; sourceTree = "<group>"; };
+		1B2660DF2566912A0005C1C2 /* SKSPhotoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSPhotoConfig.h; sourceTree = "<group>"; };
+		1B2660E02566912A0005C1C2 /* SKSPhotoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSPhotoTool.h; sourceTree = "<group>"; };
+		1B2660E12566912A0005C1C2 /* SKSPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSPhotoBrowser.h; sourceTree = "<group>"; };
+		1B2660E32566912A0005C1C2 /* SKSEditImageActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSEditImageActionView.m; sourceTree = "<group>"; };
+		1B2660E42566912A0005C1C2 /* SKSImageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSImageEditViewController.m; sourceTree = "<group>"; };
+		1B2660E52566912A0005C1C2 /* SKSEditImageCaptureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSEditImageCaptureView.h; sourceTree = "<group>"; };
+		1B2660E62566912A0005C1C2 /* SKSEditImageEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSEditImageEditView.m; sourceTree = "<group>"; };
+		1B2660E72566912A0005C1C2 /* SKSEditImageActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSEditImageActionView.h; sourceTree = "<group>"; };
+		1B2660E82566912A0005C1C2 /* SKSImageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSImageEditViewController.h; sourceTree = "<group>"; };
+		1B2660E92566912A0005C1C2 /* SKSEditImageCaptureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSEditImageCaptureView.m; sourceTree = "<group>"; };
+		1B2660EA2566912A0005C1C2 /* SKSEditImageEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSEditImageEditView.h; sourceTree = "<group>"; };
+		1B2660EC2566912A0005C1C2 /* SKSAnimationImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSAnimationImage.h; sourceTree = "<group>"; };
+		1B2660ED2566912A0005C1C2 /* SKSAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSAlbumModel.h; sourceTree = "<group>"; };
+		1B2660EE2566912A0005C1C2 /* SKSAlbumDetialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSAlbumDetialController.m; sourceTree = "<group>"; };
+		1B2660EF2566912A0005C1C2 /* SKSAlbumListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSAlbumListController.m; sourceTree = "<group>"; };
+		1B2660F02566912A0005C1C2 /* SKSPhotoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSPhotoCollectionCell.m; sourceTree = "<group>"; };
+		1B2660F12566912A0005C1C2 /* SKSAlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSAlbumTableViewCell.h; sourceTree = "<group>"; };
+		1B2660F22566912A0005C1C2 /* SKSCameroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSCameroViewController.h; sourceTree = "<group>"; };
+		1B2660F32566912A0005C1C2 /* SKSAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSAnimationView.h; sourceTree = "<group>"; };
+		1B2660F42566912A0005C1C2 /* SKSAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSAssetModel.m; sourceTree = "<group>"; };
+		1B2660F52566912A0005C1C2 /* SKSAnimationImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSAnimationImage.m; sourceTree = "<group>"; };
+		1B2660F62566912A0005C1C2 /* SKSAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSAlbumModel.m; sourceTree = "<group>"; };
+		1B2660F72566912A0005C1C2 /* SKSPhotoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSPhotoCollectionCell.h; sourceTree = "<group>"; };
+		1B2660F82566912A0005C1C2 /* SKSAlbumListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSAlbumListController.h; sourceTree = "<group>"; };
+		1B2660F92566912A0005C1C2 /* SKSAlbumDetialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSAlbumDetialController.h; sourceTree = "<group>"; };
+		1B2660FA2566912A0005C1C2 /* SKSAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSAnimationView.m; sourceTree = "<group>"; };
+		1B2660FB2566912A0005C1C2 /* SKSAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSAssetModel.h; sourceTree = "<group>"; };
+		1B2660FC2566912A0005C1C2 /* SKSCameroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSCameroViewController.m; sourceTree = "<group>"; };
+		1B2660FD2566912A0005C1C2 /* SKSAlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSAlbumTableViewCell.m; sourceTree = "<group>"; };
+		1B9F385723F51C1500A47BA9 /* SKSPhotoManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKSPhotoManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B9F385A23F51C1500A47BA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1B9F385B23F51C1500A47BA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1B9F386623F51C1C00A47BA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B9F386B23F51C1C00A47BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B9F386C23F51C1C00A47BA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B9F387223F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKSPhotoManagerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B9F387623F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKSPhotoManagerDemoUITests.m; sourceTree = "<group>"; };
+		1B9F387823F51C1D00A47BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B9F388123F51E1B00A47BA9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1B9F388223F51E1B00A47BA9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2E354BB3F0C94DFD3DBA0E3B /* Pods-SKSPhotoManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSPhotoManagerDemo.debug.xcconfig"; path = "Target Support Files/Pods-SKSPhotoManagerDemo/Pods-SKSPhotoManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3B0E137E781F4A27CA7EAD57 /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3BD8B2112414BA5000D11D17 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		47C5155037717B5703AED206 /* Pods_SKSPhotoManagerDemo_SKSPhotoManagerDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SKSPhotoManagerDemo_SKSPhotoManagerDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F7420D4A107325514C376FE /* Pods-SKSPhotoManagerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSPhotoManagerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKSPhotoManagerDemo/Pods-SKSPhotoManagerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		90410CE81C05F9F8BA0B954A /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		93373ACFBB63FAEA75FA7D12 /* Pods-SKSPhotoManagerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSPhotoManagerDemo.release.xcconfig"; path = "Target Support Files/Pods-SKSPhotoManagerDemo/Pods-SKSPhotoManagerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		BF67127F415F64D821F74222 /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D423B54F41A4881F5EE14F79 /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D85517A7D1E081DA291AB265 /* Pods_SKSPhotoManagerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SKSPhotoManagerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B9F385423F51C1500A47BA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F22F3CA2EDA01187673A244 /* Pods_SKSPhotoManagerDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B9F386F23F51C1C00A47BA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E0065F301DFAE07BA8ABED5 /* Pods_SKSPhotoManagerDemo_SKSPhotoManagerDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B2660D42566912A0005C1C2 /* SKSPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				1B2660D52566912A0005C1C2 /* SKSPhotoResource */,
+				1B2660DB2566912A0005C1C2 /* Manager */,
+				1B2660E22566912A0005C1C2 /* PictureCrop */,
+				1B2660EB2566912A0005C1C2 /* Library&&Camero */,
+			);
+			path = SKSPhotoBrowser;
+			sourceTree = SOURCE_ROOT;
+		};
+		1B2660D52566912A0005C1C2 /* SKSPhotoResource */ = {
+			isa = PBXGroup;
+			children = (
+				1B2660D82566912A0005C1C2 /* SKSPhotoRes.bundle */,
+				1B2660DA2566912A0005C1C2 /* SKSPhotoResource.h */,
+				1B2660D72566912A0005C1C2 /* SKSPhotoResource.m */,
+				1B2660D92566912A0005C1C2 /* UIView+SKSFrame.h */,
+				1B2660D62566912A0005C1C2 /* UIView+SKSFrame.m */,
+			);
+			path = SKSPhotoResource;
+			sourceTree = "<group>";
+		};
+		1B2660DB2566912A0005C1C2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1B2660E12566912A0005C1C2 /* SKSPhotoBrowser.h */,
+				1B2660DD2566912A0005C1C2 /* SKSPhotoBrowser.m */,
+				1B2660DF2566912A0005C1C2 /* SKSPhotoConfig.h */,
+				1B2660DC2566912A0005C1C2 /* SKSPhotoConfig.m */,
+				1B2660E02566912A0005C1C2 /* SKSPhotoTool.h */,
+				1B2660DE2566912A0005C1C2 /* SKSPhotoTool.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		1B2660E22566912A0005C1C2 /* PictureCrop */ = {
+			isa = PBXGroup;
+			children = (
+				1B2660E72566912A0005C1C2 /* SKSEditImageActionView.h */,
+				1B2660E32566912A0005C1C2 /* SKSEditImageActionView.m */,
+				1B2660E52566912A0005C1C2 /* SKSEditImageCaptureView.h */,
+				1B2660E92566912A0005C1C2 /* SKSEditImageCaptureView.m */,
+				1B2660EA2566912A0005C1C2 /* SKSEditImageEditView.h */,
+				1B2660E62566912A0005C1C2 /* SKSEditImageEditView.m */,
+				1B2660E82566912A0005C1C2 /* SKSImageEditViewController.h */,
+				1B2660E42566912A0005C1C2 /* SKSImageEditViewController.m */,
+			);
+			path = PictureCrop;
+			sourceTree = "<group>";
+		};
+		1B2660EB2566912A0005C1C2 /* Library&&Camero */ = {
+			isa = PBXGroup;
+			children = (
+				1B2660F92566912A0005C1C2 /* SKSAlbumDetialController.h */,
+				1B2660EE2566912A0005C1C2 /* SKSAlbumDetialController.m */,
+				1B2660F82566912A0005C1C2 /* SKSAlbumListController.h */,
+				1B2660EF2566912A0005C1C2 /* SKSAlbumListController.m */,
+				1B2660ED2566912A0005C1C2 /* SKSAlbumModel.h */,
+				1B2660F62566912A0005C1C2 /* SKSAlbumModel.m */,
+				1B2660F12566912A0005C1C2 /* SKSAlbumTableViewCell.h */,
+				1B2660FD2566912A0005C1C2 /* SKSAlbumTableViewCell.m */,
+				1B2660EC2566912A0005C1C2 /* SKSAnimationImage.h */,
+				1B2660F52566912A0005C1C2 /* SKSAnimationImage.m */,
+				1B2660F32566912A0005C1C2 /* SKSAnimationView.h */,
+				1B2660FA2566912A0005C1C2 /* SKSAnimationView.m */,
+				1B2660FB2566912A0005C1C2 /* SKSAssetModel.h */,
+				1B2660F42566912A0005C1C2 /* SKSAssetModel.m */,
+				1B2660F22566912A0005C1C2 /* SKSCameroViewController.h */,
+				1B2660FC2566912A0005C1C2 /* SKSCameroViewController.m */,
+				1B2660F72566912A0005C1C2 /* SKSPhotoCollectionCell.h */,
+				1B2660F02566912A0005C1C2 /* SKSPhotoCollectionCell.m */,
+			);
+			path = "Library&&Camero";
+			sourceTree = "<group>";
+		};
+		1B9F384E23F51C1500A47BA9 = {
+			isa = PBXGroup;
+			children = (
+				1B9F385923F51C1500A47BA9 /* SKSPhotoManagerDemo */,
+				1B9F387523F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests */,
+				1B9F385823F51C1500A47BA9 /* Products */,
+				868C0CAE08575C4448CB7833 /* Pods */,
+				421E8385118B0A67893DBFD8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1B9F385823F51C1500A47BA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B9F385723F51C1500A47BA9 /* SKSPhotoManagerDemo.app */,
+				1B9F387223F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B9F385923F51C1500A47BA9 /* SKSPhotoManagerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1B2660D42566912A0005C1C2 /* SKSPhotoBrowser */,
+				1B9F388423F521BD00A47BA9 /* 程序入口 */,
+			);
+			path = SKSPhotoManagerDemo;
+			sourceTree = "<group>";
+		};
+		1B9F387523F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1B9F387623F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests.m */,
+				1B9F387823F51C1D00A47BA9 /* Info.plist */,
+			);
+			path = SKSPhotoManagerDemoUITests;
+			sourceTree = "<group>";
+		};
+		1B9F388423F521BD00A47BA9 /* 程序入口 */ = {
+			isa = PBXGroup;
+			children = (
+				1B9F385A23F51C1500A47BA9 /* AppDelegate.h */,
+				1B9F385B23F51C1500A47BA9 /* AppDelegate.m */,
+				1B9F388123F51E1B00A47BA9 /* ViewController.h */,
+				1B9F388223F51E1B00A47BA9 /* ViewController.m */,
+				1B9F386623F51C1C00A47BA9 /* Assets.xcassets */,
+				3BD8B2112414BA5000D11D17 /* LaunchScreen.storyboard */,
+				1B9F386B23F51C1C00A47BA9 /* Info.plist */,
+				1B9F386C23F51C1C00A47BA9 /* main.m */,
+			);
+			path = "程序入口";
+			sourceTree = "<group>";
+		};
+		421E8385118B0A67893DBFD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D85517A7D1E081DA291AB265 /* Pods_SKSPhotoManagerDemo.framework */,
+				47C5155037717B5703AED206 /* Pods_SKSPhotoManagerDemo_SKSPhotoManagerDemoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		868C0CAE08575C4448CB7833 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E354BB3F0C94DFD3DBA0E3B /* Pods-SKSPhotoManagerDemo.debug.xcconfig */,
+				93373ACFBB63FAEA75FA7D12 /* Pods-SKSPhotoManagerDemo.release.xcconfig */,
+				BF67127F415F64D821F74222 /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.debug.xcconfig */,
+				3B0E137E781F4A27CA7EAD57 /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig */,
+				10BACF69BC38C9C7CCC7A733 /* Pods-SKSPhotoManagerDemo.debug.xcconfig */,
+				8F7420D4A107325514C376FE /* Pods-SKSPhotoManagerDemo.release.xcconfig */,
+				90410CE81C05F9F8BA0B954A /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.debug.xcconfig */,
+				D423B54F41A4881F5EE14F79 /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B9F385623F51C1500A47BA9 /* SKSPhotoManagerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B9F387B23F51C1D00A47BA9 /* Build configuration list for PBXNativeTarget "SKSPhotoManagerDemo" */;
+			buildPhases = (
+				A51DF114F217EBF08ED119A6 /* [CP] Check Pods Manifest.lock */,
+				1B9F385323F51C1500A47BA9 /* Sources */,
+				1B9F385423F51C1500A47BA9 /* Frameworks */,
+				1B9F385523F51C1500A47BA9 /* Resources */,
+				7EEC0A49C94655BD46F6F62C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SKSPhotoManagerDemo;
+			productName = SKSPhotoManagerDemo;
+			productReference = 1B9F385723F51C1500A47BA9 /* SKSPhotoManagerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1B9F387123F51C1C00A47BA9 /* SKSPhotoManagerDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B9F387E23F51C1D00A47BA9 /* Build configuration list for PBXNativeTarget "SKSPhotoManagerDemoUITests" */;
+			buildPhases = (
+				3E8DA03B0B395DF1C7343569 /* [CP] Check Pods Manifest.lock */,
+				1B9F386E23F51C1C00A47BA9 /* Sources */,
+				1B9F386F23F51C1C00A47BA9 /* Frameworks */,
+				1B9F387023F51C1C00A47BA9 /* Resources */,
+				B760CB9708951F234B2CE27E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B9F387423F51C1D00A47BA9 /* PBXTargetDependency */,
+			);
+			name = SKSPhotoManagerDemoUITests;
+			productName = SKSPhotoManagerDemoUITests;
+			productReference = 1B9F387223F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B9F384F23F51C1500A47BA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1220;
+				ORGANIZATIONNAME = "三棵树";
+				TargetAttributes = {
+					1B9F385623F51C1500A47BA9 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					1B9F387123F51C1C00A47BA9 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 1B9F385623F51C1500A47BA9;
+					};
+				};
+			};
+			buildConfigurationList = 1B9F385223F51C1500A47BA9 /* Build configuration list for PBXProject "SKSPhotoManagerDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B9F384E23F51C1500A47BA9;
+			productRefGroup = 1B9F385823F51C1500A47BA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B9F385623F51C1500A47BA9 /* SKSPhotoManagerDemo */,
+				1B9F387123F51C1C00A47BA9 /* SKSPhotoManagerDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B9F385523F51C1500A47BA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B2661052566912A0005C1C2 /* SKSPhotoRes.bundle in Resources */,
+				3BD8B2122414BA5000D11D17 /* LaunchScreen.storyboard in Resources */,
+				1B9F386723F51C1C00A47BA9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B9F387023F51C1C00A47BA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E8DA03B0B395DF1C7343569 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EEC0A49C94655BD46F6F62C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SKSPhotoManagerDemo/Pods-SKSPhotoManagerDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SKSPhotoManagerDemo/Pods-SKSPhotoManagerDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SKSPhotoManagerDemo/Pods-SKSPhotoManagerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A51DF114F217EBF08ED119A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SKSPhotoManagerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B760CB9708951F234B2CE27E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B9F385323F51C1500A47BA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B2661032566912A0005C1C2 /* UIView+SKSFrame.m in Sources */,
+				1B26610C2566912A0005C1C2 /* SKSEditImageCaptureView.m in Sources */,
+				1B2661042566912A0005C1C2 /* SKSPhotoResource.m in Sources */,
+				1B2661132566912A0005C1C2 /* SKSAnimationView.m in Sources */,
+				1B26610B2566912A0005C1C2 /* SKSEditImageEditView.m in Sources */,
+				1B2661092566912A0005C1C2 /* SKSEditImageActionView.m in Sources */,
+				1B26610E2566912A0005C1C2 /* SKSAlbumListController.m in Sources */,
+				1B2661112566912A0005C1C2 /* SKSAnimationImage.m in Sources */,
+				1B2661082566912A0005C1C2 /* SKSPhotoTool.m in Sources */,
+				1B26610F2566912A0005C1C2 /* SKSPhotoCollectionCell.m in Sources */,
+				1B2661062566912A0005C1C2 /* SKSPhotoConfig.m in Sources */,
+				1B9F385C23F51C1500A47BA9 /* AppDelegate.m in Sources */,
+				1B2661152566912A0005C1C2 /* SKSAlbumTableViewCell.m in Sources */,
+				1B9F386D23F51C1C00A47BA9 /* main.m in Sources */,
+				1B9F388323F51E1B00A47BA9 /* ViewController.m in Sources */,
+				1B2661122566912A0005C1C2 /* SKSAlbumModel.m in Sources */,
+				1B2661142566912A0005C1C2 /* SKSCameroViewController.m in Sources */,
+				1B2661102566912A0005C1C2 /* SKSAssetModel.m in Sources */,
+				1B26610A2566912A0005C1C2 /* SKSImageEditViewController.m in Sources */,
+				1B26610D2566912A0005C1C2 /* SKSAlbumDetialController.m in Sources */,
+				1B2661072566912A0005C1C2 /* SKSPhotoBrowser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B9F386E23F51C1C00A47BA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B9F387723F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B9F387423F51C1D00A47BA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B9F385623F51C1500A47BA9 /* SKSPhotoManagerDemo */;
+			targetProxy = 1B9F387323F51C1D00A47BA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1B9F387923F51C1D00A47BA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF67127F415F64D821F74222 /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1B9F387A23F51C1D00A47BA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B0E137E781F4A27CA7EAD57 /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B9F387C23F51C1D00A47BA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E354BB3F0C94DFD3DBA0E3B /* Pods-SKSPhotoManagerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU679DY8XD;
+				INFOPLIST_FILE = "$(SRCROOT)/SKSPhotoManagerDemo/程序入口/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Tree.SKSPhotoManagerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B9F387D23F51C1D00A47BA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93373ACFBB63FAEA75FA7D12 /* Pods-SKSPhotoManagerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU679DY8XD;
+				INFOPLIST_FILE = "$(SRCROOT)/SKSPhotoManagerDemo/程序入口/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Tree.SKSPhotoManagerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1B9F387F23F51C1D00A47BA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF67127F415F64D821F74222 /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AWY8MJ34H;
+				INFOPLIST_FILE = SKSPhotoManagerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Tree.SKSPhotoManagerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SKSPhotoManagerDemo;
+			};
+			name = Debug;
+		};
+		1B9F388023F51C1D00A47BA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B0E137E781F4A27CA7EAD57 /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AWY8MJ34H;
+				INFOPLIST_FILE = SKSPhotoManagerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Tree.SKSPhotoManagerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SKSPhotoManagerDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B9F385223F51C1500A47BA9 /* Build configuration list for PBXProject "SKSPhotoManagerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B9F387923F51C1D00A47BA9 /* Debug */,
+				1B9F387A23F51C1D00A47BA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B9F387B23F51C1D00A47BA9 /* Build configuration list for PBXNativeTarget "SKSPhotoManagerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B9F387C23F51C1D00A47BA9 /* Debug */,
+				1B9F387D23F51C1D00A47BA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B9F387E23F51C1D00A47BA9 /* Build configuration list for PBXNativeTarget "SKSPhotoManagerDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B9F387F23F51C1D00A47BA9 /* Debug */,
+				1B9F388023F51C1D00A47BA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B9F384F23F51C1500A47BA9 /* Project object */;
+}
