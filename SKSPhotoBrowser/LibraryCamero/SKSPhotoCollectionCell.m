@@ -7,7 +7,7 @@
 //
 
 #import "SKSPhotoCollectionCell.h"
-#import <Masonry.h>
+#import <Masonry/Masonry.h>
 #import "SKSPhotoTool.h"
 #import "SKSAnimationView.h"
 

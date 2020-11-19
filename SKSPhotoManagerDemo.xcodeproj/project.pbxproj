@@ -134,7 +134,7 @@
 				1B2660D52566912A0005C1C2 /* SKSPhotoResource */,
 				1B2660DB2566912A0005C1C2 /* Manager */,
 				1B2660E22566912A0005C1C2 /* PictureCrop */,
-				1B2660EB2566912A0005C1C2 /* Library&&Camero */,
+				1B2660EB2566912A0005C1C2 /* LibraryCamero */,
 			);
 			path = SKSPhotoBrowser;
 			sourceTree = SOURCE_ROOT;
@@ -179,7 +179,7 @@
 			path = PictureCrop;
 			sourceTree = "<group>";
 		};
-		1B2660EB2566912A0005C1C2 /* Library&&Camero */ = {
+		1B2660EB2566912A0005C1C2 /* LibraryCamero */ = {
 			isa = PBXGroup;
 			children = (
 				1B2660F92566912A0005C1C2 /* SKSAlbumDetialController.h */,
@@ -201,7 +201,7 @@
 				1B2660F72566912A0005C1C2 /* SKSPhotoCollectionCell.h */,
 				1B2660F02566912A0005C1C2 /* SKSPhotoCollectionCell.m */,
 			);
-			path = "Library&&Camero";
+			path = LibraryCamero;
 			sourceTree = "<group>";
 		};
 		1B9F384E23F51C1500A47BA9 = {
