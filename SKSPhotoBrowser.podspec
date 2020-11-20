@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "SKSPhotoBrowser"
 
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
 
   spec.summary      = "一行代码实现从相册中选择图片并裁剪，适用于选择头像场景，ease to use..."
 
@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "SKSPhotoBrowser", "SKSPhotoBrowser/**/*.{h,m}"
 
-  spec.resources     = 'SKSPhotoBrowser/**/*.{png,bundle}'
+  spec.resources     = 'SKSPhotoBrowser/*.{png,bundle}'
 
   # spec.exclude_files = "Classes/Exclude"
 
