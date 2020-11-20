@@ -33,7 +33,7 @@ typedef void (^SKSCompletionBlock)(NSArray <UIImage *>*imageArray, NSString *err
 @interface SKSPhotoConfig : NSObject
 
 /// 初始化
-- (instancetype)initWithDefaultConfig;
++ (instancetype)defaultConfig;
 
 /// 选择来源，默认矩形框：SquareBorder
 @property (nonatomic, assign) SKSPhotoPickType pickType;
@@ -41,7 +41,7 @@ typedef void (^SKSCompletionBlock)(NSArray <UIImage *>*imageArray, NSString *err
 /// 裁剪框的形式。NoneBorder：没有边框，SquareBorder：矩形边框，CircleBorder： 圆形边框
 @property (nonatomic, assign) SKSPhotoBorderType editBorderType;
 
-/// 编辑框宽高尺寸，默认300 : 400，⚠️根据需求设比例，绝对不能高于屏幕宽高
+/// 编辑框宽高尺寸，默认300 : 300，⚠️根据需求设比例，绝对不能高于屏幕宽高
 @property (nonatomic, assign) CGSize editBorderSize;
 
 /// 选择多少张图片，默认1张

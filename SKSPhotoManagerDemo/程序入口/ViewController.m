@@ -49,7 +49,7 @@
     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"选择图片" message:@"请在SKSPhotoConfig配置各种设置" preferredStyle:UIAlertControllerStyleAlert];
     __weak __block typeof(self) weakSelf = self;
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        SKSPhotoConfig *config = [[SKSPhotoConfig alloc]initWithDefaultConfig];
+        SKSPhotoConfig *config = [SKSPhotoConfig defaultConfig];
         config.pickType = Camero;
         config.editBorderSize = CGSizeMake(250, 250);
         [SKSPhotoBrowser.shared showInView:self Config:config Completion:^(NSArray<UIImage *> * _Nonnull imageArray, NSString * _Nonnull errorMsg) {
@@ -61,7 +61,7 @@
         }];
     }];
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"从相册中选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        SKSPhotoConfig *config = [[SKSPhotoConfig alloc]initWithDefaultConfig];
+        SKSPhotoConfig *config = [SKSPhotoConfig defaultConfig];
         config.editBorderSize = CGSizeMake(200, 200);
         config.pickType = Photo;
         config.isDragEditBorder = NO;

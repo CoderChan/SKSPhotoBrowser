@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1B2661032566912A0005C1C2 /* UIView+SKSFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660D62566912A0005C1C2 /* UIView+SKSFrame.m */; };
 		1B2661042566912A0005C1C2 /* SKSPhotoResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660D72566912A0005C1C2 /* SKSPhotoResource.m */; };
-		1B2661052566912A0005C1C2 /* SKSPhotoRes.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B2660D82566912A0005C1C2 /* SKSPhotoRes.bundle */; };
 		1B2661062566912A0005C1C2 /* SKSPhotoConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660DC2566912A0005C1C2 /* SKSPhotoConfig.m */; };
 		1B2661072566912A0005C1C2 /* SKSPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660DD2566912A0005C1C2 /* SKSPhotoBrowser.m */; };
 		1B2661082566912A0005C1C2 /* SKSPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2660DE2566912A0005C1C2 /* SKSPhotoTool.m */; };
@@ -31,6 +30,7 @@
 		1B9F386D23F51C1C00A47BA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F386C23F51C1C00A47BA9 /* main.m */; };
 		1B9F387723F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F387623F51C1D00A47BA9 /* SKSPhotoManagerDemoUITests.m */; };
 		1B9F388323F51E1B00A47BA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F388223F51E1B00A47BA9 /* ViewController.m */; };
+		1BF4C20E256799D600CF8EB9 /* SKSPhotoRes.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1BF4C20D256799D600CF8EB9 /* SKSPhotoRes.bundle */; };
 		3BD8B2122414BA5000D11D17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD8B2112414BA5000D11D17 /* LaunchScreen.storyboard */; };
 		6F22F3CA2EDA01187673A244 /* Pods_SKSPhotoManagerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85517A7D1E081DA291AB265 /* Pods_SKSPhotoManagerDemo.framework */; };
 		8E0065F301DFAE07BA8ABED5 /* Pods_SKSPhotoManagerDemo_SKSPhotoManagerDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C5155037717B5703AED206 /* Pods_SKSPhotoManagerDemo_SKSPhotoManagerDemoUITests.framework */; };
@@ -50,7 +50,6 @@
 		10BACF69BC38C9C7CCC7A733 /* Pods-SKSPhotoManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSPhotoManagerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SKSPhotoManagerDemo/Pods-SKSPhotoManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		1B2660D62566912A0005C1C2 /* UIView+SKSFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SKSFrame.m"; sourceTree = "<group>"; };
 		1B2660D72566912A0005C1C2 /* SKSPhotoResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSPhotoResource.m; sourceTree = "<group>"; };
-		1B2660D82566912A0005C1C2 /* SKSPhotoRes.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SKSPhotoRes.bundle; sourceTree = "<group>"; };
 		1B2660D92566912A0005C1C2 /* UIView+SKSFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SKSFrame.h"; sourceTree = "<group>"; };
 		1B2660DA2566912A0005C1C2 /* SKSPhotoResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSPhotoResource.h; sourceTree = "<group>"; };
 		1B2660DC2566912A0005C1C2 /* SKSPhotoConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSPhotoConfig.m; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		1B9F387823F51C1D00A47BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B9F388123F51E1B00A47BA9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1B9F388223F51E1B00A47BA9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1BF4C20D256799D600CF8EB9 /* SKSPhotoRes.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SKSPhotoRes.bundle; sourceTree = "<group>"; };
 		2E354BB3F0C94DFD3DBA0E3B /* Pods-SKSPhotoManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSPhotoManagerDemo.debug.xcconfig"; path = "Target Support Files/Pods-SKSPhotoManagerDemo/Pods-SKSPhotoManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		3B0E137E781F4A27CA7EAD57 /* Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests/Pods-SKSPhotoManagerDemo-SKSPhotoManagerDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3BD8B2112414BA5000D11D17 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,7 +131,8 @@
 		1B2660D42566912A0005C1C2 /* SKSPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				1B2660D52566912A0005C1C2 /* SKSPhotoResource */,
+				1BF4C20C256799D600CF8EB9 /* SKSPhotoRes */,
+				1B2660D52566912A0005C1C2 /* SKSCategory */,
 				1B2660DB2566912A0005C1C2 /* Manager */,
 				1B2660E22566912A0005C1C2 /* PictureCrop */,
 				1B2660EB2566912A0005C1C2 /* LibraryCamero */,
@@ -139,16 +140,15 @@
 			path = SKSPhotoBrowser;
 			sourceTree = SOURCE_ROOT;
 		};
-		1B2660D52566912A0005C1C2 /* SKSPhotoResource */ = {
+		1B2660D52566912A0005C1C2 /* SKSCategory */ = {
 			isa = PBXGroup;
 			children = (
-				1B2660D82566912A0005C1C2 /* SKSPhotoRes.bundle */,
 				1B2660DA2566912A0005C1C2 /* SKSPhotoResource.h */,
 				1B2660D72566912A0005C1C2 /* SKSPhotoResource.m */,
 				1B2660D92566912A0005C1C2 /* UIView+SKSFrame.h */,
 				1B2660D62566912A0005C1C2 /* UIView+SKSFrame.m */,
 			);
-			path = SKSPhotoResource;
+			path = SKSCategory;
 			sourceTree = "<group>";
 		};
 		1B2660DB2566912A0005C1C2 /* Manager */ = {
@@ -256,6 +256,14 @@
 			);
 			path = "程序入口";
 			sourceTree = "<group>";
+		};
+		1BF4C20C256799D600CF8EB9 /* SKSPhotoRes */ = {
+			isa = PBXGroup;
+			children = (
+				1BF4C20D256799D600CF8EB9 /* SKSPhotoRes.bundle */,
+			);
+			path = SKSPhotoRes;
+			sourceTree = SOURCE_ROOT;
 		};
 		421E8385118B0A67893DBFD8 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -365,7 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B2661052566912A0005C1C2 /* SKSPhotoRes.bundle in Resources */,
+				1BF4C20E256799D600CF8EB9 /* SKSPhotoRes.bundle in Resources */,
 				3BD8B2122414BA5000D11D17 /* LaunchScreen.storyboard in Resources */,
 				1B9F386723F51C1C00A47BA9 /* Assets.xcassets in Resources */,
 			);

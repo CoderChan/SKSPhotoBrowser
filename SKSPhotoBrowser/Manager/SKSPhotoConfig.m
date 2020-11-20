@@ -11,19 +11,17 @@
 @implementation SKSPhotoConfig
 
 
-- (instancetype)initWithDefaultConfig {
-    self = [super init];
-    if (self) {
-        self.pickType = CameroAndPhoto;
-        self.editBorderType = SquareBorder;
-        self.editBorderSize = CGSizeMake(300, 400);
-        self.photoCount = 1;
-        self.allowPickingImage = YES;
-        self.allowPickingVideo = NO;
-        self.isDragEditBorder = YES;
-        self.isEditZoom = YES;
-    }
-    return self;
++ (instancetype)defaultConfig {
+    SKSPhotoConfig *config = [SKSPhotoConfig new];
+    config.pickType = CameroAndPhoto;
+    config.editBorderType = SquareBorder;
+    config.editBorderSize = CGSizeMake(300, 300);
+    config.photoCount = 1;
+    config.allowPickingImage = YES;
+    config.allowPickingVideo = NO;
+    config.isDragEditBorder = YES;
+    config.isEditZoom = YES;
+    return  config;
 }
 
 @end
