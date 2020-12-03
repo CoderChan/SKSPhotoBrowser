@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "SKSPhotoBrowser.h"
+#import <Masonry/Masonry.h>
 
 @interface ViewController ()
 
@@ -27,14 +28,19 @@
 
 - (void)setupSubViews {
     
-    CGFloat left = 50;
-    CGFloat width = self.view.frame.size.width - left * 2;
-    self.bigImgView = [[UIImageView alloc]initWithFrame:CGRectMake(left, 100, width, width / 0.75)];
+    CGFloat width = 300;
+    self.bigImgView = [[UIImageView alloc]initWithFrame:CGRectZero];
     self.bigImgView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:self.bigImgView];
+    [self.bigImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(@80);
+        make.width.equalTo(@(width));
+        make.height.equalTo(@(width * 1.1));
+    }];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake((self.view.frame.size.width - 100) / 2, (self.view.frame.size.height - 44 - 120), 100, 44);
+    button.frame = CGRectMake((self.view.frame.size.width - 100) / 2, 200, 100, 44);
     button.backgroundColor = [UIColor redColor];
     button.layer.cornerRadius = 22;
     [button setTitle:@"选择图片" forState:UIControlStateNormal];

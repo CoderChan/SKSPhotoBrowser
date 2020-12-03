@@ -42,7 +42,20 @@
     }
     return self;
 }
-    
+
+#pragma mark - 屏幕旋转
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

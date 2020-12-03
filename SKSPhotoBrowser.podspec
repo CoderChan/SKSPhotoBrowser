@@ -30,7 +30,7 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "SKSPhotoBrowser", "SKSPhotoBrowser/**/*.{h,m}"
 
-  spec.resources     = 'SKSPhotoBrowser/SKSPhotoRes/*.{png,bundle}'
+  spec.resources     = 'SKSPhotoBrowser/**/*.{png,bundle}'
 
   # spec.exclude_files = "Classes/Exclude"
 

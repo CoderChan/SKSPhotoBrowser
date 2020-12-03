@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "SKSPhotoConfig.h"
 
+#define NumberValue (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone ? 1 : 1.5)
+
 @interface SKSPhotoBrowser : NSObject
 
 /// 初始化
 + (instancetype)shared;
+
 
 /// 弹出相册选择框
 /// @param controller 从哪个控制器弹出

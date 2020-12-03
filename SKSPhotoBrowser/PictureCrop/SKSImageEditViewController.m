@@ -11,6 +11,7 @@
 #import "SKSEditImageCaptureView.h"
 #import "SKSEditImageEditView.h"
 #import <Masonry/Masonry.h>
+#import "SKSPhotoBrowser.h"
 
 static inline UIEdgeInsets hq_safeAreaInset() {
     if (@available(iOS 11.0, *)) {
@@ -78,13 +79,13 @@ static inline UIEdgeInsets hq_safeAreaInset() {
     [self.captureView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@(self.editViewSize.width));
         make.height.equalTo(@(self.editViewSize.height));
-        make.top.equalTo(@((CGFloat)(hq_safeAreaInset().top + self.topSpace)));
-        make.centerX.equalTo(@0);
+        make.centerY.equalTo(self.view).offset(-24 * NumberValue);
+        make.centerX.equalTo(self.view);
     }];
     
     [self.actionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(@0);
-        make.height.equalTo(@(49*2 + hq_safeAreaInset().bottom));
+        make.height.equalTo(@(49 * NumberValue + hq_safeAreaInset().bottom));
     }];
     
     [self.editView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -220,7 +221,7 @@ static inline UIEdgeInsets hq_safeAreaInset() {
                     if (self.editViewSize.width * (self.imageViewOriginSize.width/self.imageViewOriginSize.height) >= self.editViewSize.height) {
                         self.imageView.frame = CGRectMake(0, 0, self.editViewSize.width * (self.imageViewOriginSize.width/self.imageViewOriginSize.height), self.editViewSize.width);  //宽拉满
                     } else {
-                        self.imageView.frame = CGRectMake(0, 0, self.editViewSize.height, self.editViewSize.height * (self.imageViewOriginSize.height/self.imageViewOriginSize.width)); //高拉满
+                        self.imageView.frame = CGRectMake(0, 0, self.editViewSize.height, self.editViewSize.height * (self.imageViewOriginSize.height / self.imageViewOriginSize.width)); //高拉满
                     }
                 } else {
                     self.imageView.frame = CGRectMake(0, 0, self.imageViewOriginSize.width, self.imageViewOriginSize.height);
@@ -274,10 +275,18 @@ static inline UIEdgeInsets hq_safeAreaInset() {
 }
 
 - (CGSize)imageViewOriginSize {
-    if (self.editViewSize.width/self.originImage.size.width > self.editViewSize.height/self.originImage.size.height) {
-        return CGSizeMake(self.editViewSize.width, (CGFloat)((self.originImage.size.height/self.originImage.size.width)*self.editViewSize.width)); //宽
+    CGSize imageSize = self.originImage.size;
+    if (self.originImage.size.width == 0) {
+        imageSize.width = 200;
+    }
+    if (self.originImage.size.height == 0) {
+        imageSize.height = 200;
+    }
+        
+    if (self.editViewSize.width / imageSize.width > self.editViewSize.height / imageSize.height) {
+        return CGSizeMake(self.editViewSize.width, (CGFloat)((imageSize.height / imageSize.width) * self.editViewSize.width)); //宽
     } else {
-        return CGSizeMake((CGFloat)((self.originImage.size.width/self.originImage.size.height)*self.editViewSize.height), self.editViewSize.height);  //高
+        return CGSizeMake((CGFloat)((imageSize.width / imageSize.height) *self.editViewSize.height), self.editViewSize.height);  //高
     }
 }
 
@@ -286,13 +295,14 @@ static inline UIEdgeInsets hq_safeAreaInset() {
         _captureView = [[SKSEditImageCaptureView alloc] init];
         _captureView.captureView = self.scrollView;
         _captureView.imageView = self.imageView;
+        _captureView.backgroundColor = [UIColor redColor];
     }
     return _captureView;
 }
 
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.editViewSize.width, self.editViewSize.height)];
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 10, self.editViewSize.width, self.editViewSize.height)];
         
         _scrollView.delegate = self;
         _scrollView.layer.masksToBounds = NO;
@@ -310,9 +320,9 @@ static inline UIEdgeInsets hq_safeAreaInset() {
         _scrollView.contentSize = CGSizeMake(self.imageViewOriginSize.width, self.imageViewOriginSize.height);
         if (@available(iOS 11.0, *)) {
             _scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            // Fallback on earlier versions
         }
+        _scrollView.backgroundColor = [UIColor magentaColor];
+
     }
     return _scrollView;
 }

@@ -8,6 +8,7 @@
 
 #import "SKSEditImageActionView.h"
 #import "SKSPhotoResource.h"
+#import "SKSPhotoBrowser.h"
 
 @interface SKSEditImageActionView ()
 
@@ -23,7 +24,7 @@
         self.backgroundColor = [UIColor colorWithRed:(55)/255.0f green:(55)/255.0f blue:(55)/255.0f alpha:(1)];
 //        self.backgroundColor = [UIColor purpleColor];
         
-        [self addSubview:self.rotateButton];
+//        [self addSubview:self.rotateButton];
         [self addSubview:self.cancelButton];
         [self addSubview:self.originButton];
         [self addSubview:self.finishButton];
@@ -37,36 +38,36 @@
 
 - (void)makeConstraints {
     
-    [self.rotateButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@0);
-        make.top.equalTo(@0);
-        make.width.equalTo(@(25 + 40));
-        make.height.equalTo(@49);
-    }];
+//    [self.rotateButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(@0);
+//        make.top.equalTo(@0);
+//        make.width.equalTo(@(25 + 40));
+//        make.height.equalTo(@49);
+//    }];
     
     [self.cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@20);
-        make.width.equalTo(@50);
-        make.height.equalTo(@49);
-        make.top.equalTo(@49);
+        make.left.equalTo(@(20 * NumberValue));
+        make.width.equalTo(@(50 * NumberValue));
+        make.height.equalTo(@(49 * NumberValue));
+        make.top.equalTo(@(1 * NumberValue));
     }];
     
     [self.originButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@50);
-        make.height.equalTo(@49);
-        make.top.equalTo(@49);
+        make.width.equalTo(@(50 * NumberValue));
+        make.height.equalTo(@(49 * NumberValue));
+        make.top.equalTo(@(1 * NumberValue));
         make.centerX.equalTo(@0);
     }];
     
     [self.finishButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(@-20);
-        make.width.equalTo(@50);
-        make.height.equalTo(@49);
-        make.top.equalTo(@49);
+        make.right.equalTo(@(-20 * NumberValue));
+        make.width.equalTo(@(50 * NumberValue));
+        make.height.equalTo(@(49 * NumberValue));
+        make.top.equalTo(@(1 * NumberValue));
     }];
     
     [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@49);
+        make.top.equalTo(@1);
         make.left.right.equalTo(@0);
         make.height.equalTo(@.7f);
     }];
@@ -80,21 +81,21 @@
 }
 
 #pragma mark - getter & setter
-- (UIButton *)rotateButton {
-    if (!_rotateButton) {
-        _rotateButton = [[UIButton alloc] init];
-        
-        [_rotateButton setImage:[SKSPhotoResource imageNamed:@"sks_photo_rotate_90"] forState:UIControlStateNormal];
-        _rotateButton.tag = 0;
-        _rotateButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [_rotateButton.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.height.equalTo(@25);
-            make.center.equalTo(@0);
-        }];
-        [_rotateButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _rotateButton;
-}
+//- (UIButton *)rotateButton {
+//    if (!_rotateButton) {
+//        _rotateButton = [[UIButton alloc] init];
+//
+//        [_rotateButton setImage:[SKSPhotoResource imageNamed:@"sks_photo_rotate_90"] forState:UIControlStateNormal];
+//        _rotateButton.tag = 0;
+//        _rotateButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//        [_rotateButton.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.width.height.equalTo(@25);
+//            make.center.equalTo(@0);
+//        }];
+//        [_rotateButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+//    }
+//    return _rotateButton;
+//}
 
 - (UIButton *)cancelButton {
     if (!_cancelButton) {

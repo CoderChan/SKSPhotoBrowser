@@ -35,7 +35,7 @@
         
         [self.preView addSubview:self.lineWrap];
         [self.lineWrap addSubview:self.imageWrap];
-        
+                
         [self makeConstraints];
     }
     return self;

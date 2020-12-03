@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id <SKSEditImageActionViewDelegate> delegate;
 
 /// 旋转图标
-@property (nonatomic, strong) UIButton *rotateButton;
+//@property (nonatomic, strong) UIButton *rotateButton;
 /// 取消
 @property (nonatomic, strong) UIButton *cancelButton;
 /// 还原
