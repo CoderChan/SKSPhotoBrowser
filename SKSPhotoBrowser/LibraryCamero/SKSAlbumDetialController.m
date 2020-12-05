@@ -43,25 +43,18 @@
     return self;
 }
 
-#pragma mark - 屏幕旋转
-- (BOOL)shouldAutorotate {
-    return YES;
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationItem.leftBarButtonItem setTintColor:[UIColor systemBlueColor]];
+    self.navigationController.navigationBarHidden = NO;
 }
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationPortrait;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.model.name;
     [self setupSubViews];
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(deviceDidChangeRotate:) name:UIApplicationDidChangeStatusBarFrameNotification object:nil];
+    [self.navigationController.navigationBar setTranslucent:NO];
 }
 
 - (void)deviceDidChangeRotate:(NSNotification *)noti {
@@ -110,7 +103,7 @@
     [SKSPhotoTool.shared getOriginImageWithModel:model.asset ProgressHandler:^(double progress, NSError *error, BOOL *stop, NSDictionary *info) {
         cell.progress = !error ? progress : 1;
     } Completion:^(UIImage *image) {
-        cell.oringinImage = image;
+        if (image == nil) { return; }
         if (weakSelf.config.editBorderType == NoneBorder) {
             // 没有编辑框，无须裁剪
             if (weakSelf.completionBlock) {
@@ -145,6 +138,20 @@
 // 这个是两行cell之间的间距（上下行cell的间距）
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return self.collectSpace;
+}
+
+#pragma mark - 其他周期
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleDefault;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    return UIStatusBarAnimationNone;
 }
 
 #pragma mark - 懒加载 & 辅助函数

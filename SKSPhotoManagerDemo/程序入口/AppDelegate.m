@@ -36,15 +36,15 @@
     [self.window makeKeyAndVisible];
 }
 
-//- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-////    if (self.isForceLandscape) {
-////        return UIInterfaceOrientationMaskLandscape;
-////    }else if (self.isForcePortrait) {
-////        return UIInterfaceOrientationMaskPortrait;
-////    }else{
-////        return UIInterfaceOrientationMaskLandscape;
-////    }
-//    return UIInterfaceOrientationMaskPortrait;
-//}
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+//    if (self.isForceLandscape) {
+//        return UIInterfaceOrientationMaskLandscape;
+//    }else if (self.isForcePortrait) {
+//        return UIInterfaceOrientationMaskPortrait;
+//    }else{
+//        return UIInterfaceOrientationMaskLandscape;
+//    }
+    return UIInterfaceOrientationMaskLandscape;
+}
 
 @end

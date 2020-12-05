@@ -62,48 +62,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancleAction)];
-    [self.navigationItem.leftBarButtonItem setTintColor:[UIColor blackColor]];
+    [self.navigationItem.leftBarButtonItem setTintColor:[UIColor systemBlueColor]];
     self.navigationController.navigationBarHidden = NO;
-    
-//    NSNumber *orientationUnknown = [NSNumber numberWithInt:UIInterfaceOrientationUnknown];
-//
-//    [[UIDevice currentDevice] setValue:orientationUnknown forKey:@"orientation"];
-//
-//    NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
-//
-//    [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
-    
-//    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
-//
-//        SEL selector = NSSelectorFromString(@"setOrientation:");
-//
-//        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
-//
-//        [invocation setSelector:selector];
-//
-//        [invocation setTarget:[UIDevice currentDevice]];
-//
-//        int val = UIInterfaceOrientationPortrait;
-//
-//        [invocation setArgument:&val atIndex:2];
-//
-//        [invocation invoke];
-//
-//        [UIViewController attemptRotationToDeviceOrientation];
-//
-//    }
-}
-
-#pragma mark - 屏幕旋转
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationPortrait;
 }
 
 
@@ -222,7 +182,7 @@
                 weakSelf.completionBlock(imageArray, errorMsg);
             }
         }];
-//        [weakSelf.navigationController pushViewController:album animated:NO];
+        [weakSelf.navigationController pushViewController:album animated:NO];
     }];
 }
 

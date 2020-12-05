@@ -295,7 +295,6 @@ static inline UIEdgeInsets hq_safeAreaInset() {
         _captureView = [[SKSEditImageCaptureView alloc] init];
         _captureView.captureView = self.scrollView;
         _captureView.imageView = self.imageView;
-        _captureView.backgroundColor = [UIColor redColor];
     }
     return _captureView;
 }
@@ -321,7 +320,6 @@ static inline UIEdgeInsets hq_safeAreaInset() {
         if (@available(iOS 11.0, *)) {
             _scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
-        _scrollView.backgroundColor = [UIColor magentaColor];
 
     }
     return _scrollView;

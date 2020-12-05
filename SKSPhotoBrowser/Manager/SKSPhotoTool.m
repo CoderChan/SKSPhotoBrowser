@@ -153,14 +153,17 @@
                 });
             };
             options.networkAccessAllowed = YES;
-            [PHImageManager.defaultManager requestImageDataForAsset:asset options:options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-                UIImage *resultImage = [UIImage imageWithData:imageData];
-                resultImage = [self scaleImage:resultImage toSize:photoSize];
-                resultImage = [self fixOrientation:resultImage];
-                if (completion) {
-                    completion(resultImage, info, NO);
-                }
-            }];
+            @autoreleasepool {
+                [PHImageManager.defaultManager requestImageDataForAsset:asset options:options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+                    NSLog(@"requestImageDataForAsset returned info(%@)", info);
+                    UIImage *resultImage = [UIImage imageWithData:imageData];
+                    resultImage = [self scaleImage:resultImage toSize:photoSize];
+                    resultImage = [self fixOrientation:resultImage];
+                    if (completion) {
+                        completion(resultImage, info, NO);
+                    }
+                }];
+            }
         }
     }];
     return imageRequestID;
@@ -185,29 +188,23 @@
         });
     };
     if (@available(iOS 13, *)) {
-        int32_t imageRequestID = [PHImageManager.defaultManager requestImageDataAndOrientationForAsset:asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, CGImagePropertyOrientation orientation, NSDictionary * _Nullable info) {
-            UIImage *resultImage = [UIImage imageWithData:imageData];
-            resultImage = [weakSelf fixOrientation:resultImage];
-            completion(resultImage);
-        }];
-        return imageRequestID;
+        @autoreleasepool {
+            int32_t imageRequestID = [PHImageManager.defaultManager requestImageDataAndOrientationForAsset:asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, CGImagePropertyOrientation orientation, NSDictionary * _Nullable info) {
+                UIImage *resultImage = [UIImage imageWithData:imageData];
+                resultImage = [weakSelf fixOrientation:resultImage];
+                completion(resultImage);
+            }];
+            return imageRequestID;
+        }
     } else {
-        int32_t imageRequestID = [PHImageManager.defaultManager requestImageDataForAsset:asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-            /*
-             info = @{
-             PHImageFileDataKey = {length = 2061464, bytes = 0xffd8ffe1 31554578 69660000 4d4d002a ... 91cd2690 9499ffd9 };
-             PHImageFileOrientationKey = 0;
-             PHImageFileUTIKey = "public.jpeg";
-             PHImageResultIsDegradedKey = 0;
-             PHImageResultRequestIDKey = 177;
-             }
-             */
-            
-            UIImage *resultImage = [UIImage imageWithData:imageData];
-            resultImage = [weakSelf fixOrientation:resultImage];
-            completion(resultImage);
-        }];
-        return imageRequestID;
+        @autoreleasepool {
+            int32_t imageRequestID = [PHImageManager.defaultManager requestImageDataForAsset:asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+                UIImage *resultImage = [UIImage imageWithData:imageData];
+                resultImage = [weakSelf fixOrientation:resultImage];
+                completion(resultImage);
+            }];
+            return imageRequestID;
+        }
     }
     
 }

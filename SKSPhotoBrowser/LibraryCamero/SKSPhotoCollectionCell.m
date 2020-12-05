@@ -55,6 +55,8 @@
     }
 }
 
+
+
 - (void)setOringinImage:(UIImage *)oringinImage {
     _oringinImage = oringinImage;
     self.coverImgView.image = oringinImage;
