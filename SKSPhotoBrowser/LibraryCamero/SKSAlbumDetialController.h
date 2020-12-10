@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SKSAlbumDetialController : UIViewController
 
-
 /// 前往专辑详情界面
 /// @param model 专辑模型
 /// @param config 配置信息

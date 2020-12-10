@@ -22,7 +22,6 @@ typedef enum : NSUInteger {
     CircleBorder = 2      // 圆形边框
 } SKSPhotoBorderType;
 
-
 /// 完成的回调
 typedef void (^SKSCompletionBlock)(NSArray <UIImage *>*imageArray, NSString *errorMsg);
 

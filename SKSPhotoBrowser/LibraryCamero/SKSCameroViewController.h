@@ -20,7 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithConfig:(SKSPhotoConfig *)config Completion:(SKSCompletionBlock)completion;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

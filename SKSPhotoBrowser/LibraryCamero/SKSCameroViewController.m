@@ -11,6 +11,7 @@
 #import "SKSImageEditViewController.h"
 #import "SKSPhotoResource.h"
 #import <Masonry/Masonry.h>
+#import "SKSPhotoBrowser.h"
 
 @interface SKSCameroViewController ()
 
@@ -73,35 +74,55 @@
     return self;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"拍摄";
-    [self setupSubViews];
+    __weak __block typeof(self) weakSelf = self;
+    UIInterfaceOrientation orientation = UIApplication.sharedApplication.statusBarOrientation;
+  
+   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(orientation == UIInterfaceOrientationPortrait ? 0 : 0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      [weakSelf setupSubViews];
+    });
 }
 
 - (void)setupSubViews {
     self.view.backgroundColor = SKSPhoto_RGBACOLOR(55, 55, 55, 1);
     BOOL is_pad = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? YES : NO;
+    __weak __block typeof(self) weakSelf = self;
     
-    self.backView = [[UIView alloc]initWithFrame:self.view.bounds];
+    self.backView = [[UIView alloc]init];
     [self.view addSubview:self.backView];
+    [self.backView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(weakSelf.view);
+    }];
     
     // 自己定义一个和原生的相机一样的按钮
-    CGFloat registerSize = 70;
+    CGFloat registerSize = 70 * NumberValue;
+    CGFloat bottomSpace = [self bottonHeight];
+    CGFloat leftSpace = is_pad ? 50 : 23;
     self.takeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.takeButton.frame = CGRectMake(self.view.frame.size.width / 2 - registerSize/2, self.view.frame.size.height - [self bottonHeight] + 5, registerSize, registerSize);
     [self.takeButton setImage:[self imageWithImage:[SKSPhotoResource imageNamed:@"sks_photo_take_camero"] imageColor:[UIColor whiteColor]] forState:UIControlStateNormal];
     [self.takeButton addTarget:self action:@selector(btnRegisterClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.takeButton];
+    [self.takeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+      make.centerX.equalTo(weakSelf.view);
+      make.bottom.equalTo(weakSelf.view.mas_bottom).inset(bottomSpace);
+      make.size.equalTo(@(registerSize));
+    }];
     
     self.cancleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.cancleButton.frame = CGRectMake(is_pad ? 50 : 23, self.view.frame.size.height - [self bottonHeight] + 5, 40, registerSize);
     [self.cancleButton setTitle:@"取消" forState:UIControlStateNormal];
+    self.cancleButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.cancleButton.titleLabel.font = [UIFont systemFontOfSize:15];
     [self.cancleButton setTintColor:[UIColor whiteColor]];
     [self.cancleButton addTarget:self action:@selector(cancleAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.cancleButton];
+    [self.cancleButton mas_makeConstraints:^(MASConstraintMaker *make) {
+      make.centerY.equalTo(weakSelf.takeButton.mas_centerY);
+      make.left.equalTo(weakSelf.view).offset(leftSpace);
+      make.width.equalTo(@(40 * NumberValue));
+      make.height.equalTo(@(30 * NumberValue));
+    }];
     
     [self checkCameroAuthorization];
     
@@ -109,15 +130,15 @@
 
 - (void)addLayerAction {
     
-    BOOL is_pad = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? YES : NO;
+//    BOOL is_pad = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? YES : NO;
     if (self.config.editBorderType == SquareBorder) {
-        CGFloat left = is_pad ? 80 : 35;
-        CGFloat width = self.view.frame.size.width - left * 2;
-        CGFloat height = width / 0.75;
-        UIImageView *layerIcon = [[UIImageView alloc]initWithImage:[SKSPhotoResource imageNamed:@"sks_photo_border"]];
-        layerIcon.frame = CGRectMake(left, (self.view.frame.size.height - height) / 2, width, height);
-        layerIcon.layer.position = CGPointMake(self.view.frame.size.width / 2, (self.view.frame.size.height - [self bottonHeight]) / 2);
-        [self.view.layer addSublayer:layerIcon.layer];
+//        CGFloat left = is_pad ? 80 : 35;
+//        CGFloat width = self.view.frame.size.width - left * 2;
+//        CGFloat height = width / 0.75;
+//        UIImageView *layerIcon = [[UIImageView alloc]initWithImage:[SKSPhotoResource imageNamed:@"sks_photo_border"]];
+//        layerIcon.frame = CGRectMake(left, (self.view.frame.size.height - height) / 2, width, height);
+//        layerIcon.layer.position = CGPointMake(self.view.frame.size.width / 2, (self.view.frame.size.height - [self bottonHeight]) / 2);
+//        [self.view.layer addSublayer:layerIcon.layer];
     }else if (self.config.editBorderType == CircleBorder){
         
     }else {
@@ -157,13 +178,13 @@
     }
 }
 
-
 - (void)showEmptyViewWithButtonTitle:(NSString *)title Message:(NSString *)message ClickBlock:(void (^)(void))clickBlock {
     
     self.clickBlock = clickBlock;
     self.emptyLabel.text = message;
     self.takeButton.enabled = NO;
-    CGFloat lockSize = UIScreen.mainScreen.bounds.size.width * 0.45;
+    CGFloat lockSize = UIScreen.mainScreen.bounds.size.width * 0.35;
+    __weak __block typeof(self) weakSelf = self;
     
     [self.emptyButton setTitle:title forState:UIControlStateNormal];
     [self.view addSubview:self.emptyImgView];
@@ -173,24 +194,24 @@
     self.emptyImgView.hidden = NO;
     self.emptyButton.hidden = title.length > 0 ? NO : YES;
     [self.emptyImgView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view).offset(-64);
+        make.centerX.equalTo(weakSelf.view);
+        make.centerY.equalTo(weakSelf.view).offset(-64);
         make.width.equalTo(@(lockSize));
         make.height.equalTo(@(lockSize));
     }];
     
     [self.emptyButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.emptyImgView.mas_bottom).offset(8);
-        make.centerX.equalTo(self.view.mas_centerX);
-        make.width.equalTo(@(180));
-        make.height.equalTo(@(44));
+        make.top.equalTo(weakSelf.emptyImgView.mas_bottom).offset(8);
+        make.centerX.equalTo(weakSelf.view.mas_centerX);
+        make.width.equalTo(@(180 * NumberValue));
+        make.height.equalTo(@(44 * NumberValue));
     }];
     
     CGFloat leftOff = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 120 : 30;
     [self.emptyLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-      make.top.equalTo(self.emptyButton.mas_bottom).offset(15);
-      make.centerX.equalTo(self.emptyImgView.mas_centerX);
-      make.left.equalTo(self.view.mas_left).offset(leftOff);
+      make.top.equalTo(weakSelf.emptyButton.mas_bottom).offset(15);
+      make.centerX.equalTo(weakSelf.emptyImgView.mas_centerX);
+      make.left.equalTo(weakSelf.view.mas_left).offset(leftOff);
     }];
     
 }
@@ -200,7 +221,6 @@
     self.emptyImgView.hidden = YES;
     self.emptyButton.hidden = YES;
 }
-
 
 #pragma mark - 设置相机
 - (void)initAVCaptureSession
@@ -218,7 +238,7 @@
     [device lockForConfiguration:nil];
     //设置闪光灯为自动
     if ([device isFlashModeSupported:AVCaptureFlashModeAuto]) {
-        [device setFlashMode:AVCaptureFlashModeAuto];
+        [device setFlashMode:AVCaptureFlashModeOff];
     }
     
     [device unlockForConfiguration];
@@ -233,7 +253,6 @@
     }
     
     [self hideMessageAction];
-    
     
     self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
     // 输出设置。AVVideoCodecJPEG   输出jpeg格式图片
@@ -252,28 +271,30 @@
     
     // 初始化预览图层
     self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
+    [self resetStatusBarOrientation];
     [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-    self.previewLayer.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.previewLayer.frame = self.view.bounds;
     self.backView.layer.masksToBounds = YES;
     [self.backView.layer addSublayer:self.previewLayer];
     
 }
 
-- (AVCaptureVideoOrientation)avOrientationForDeviceOrientation:(UIDeviceOrientation)deviceOrientation
-{
-    AVCaptureVideoOrientation result = (AVCaptureVideoOrientation)deviceOrientation;
-    if ( deviceOrientation == UIDeviceOrientationLandscapeLeft )
-        result = AVCaptureVideoOrientationLandscapeRight;
-    else if ( deviceOrientation == UIDeviceOrientationLandscapeRight )
-        result = AVCaptureVideoOrientationLandscapeLeft;
-    return result;
+- (void)resetStatusBarOrientation {
+  UIInterfaceOrientation statusBarOrientation = UIApplication.sharedApplication.statusBarOrientation;
+  AVCaptureVideoOrientation videoOrientation = AVCaptureVideoOrientationPortrait;
+  if (statusBarOrientation == UIInterfaceOrientationLandscapeLeft) {
+    videoOrientation = AVCaptureVideoOrientationLandscapeLeft;
+  }else if (statusBarOrientation == UIInterfaceOrientationLandscapeRight) {
+    videoOrientation = AVCaptureVideoOrientationLandscapeRight;
+  }else{
+    videoOrientation = AVCaptureVideoOrientationPortrait;
+  }
+  self.previewLayer.connection.videoOrientation = videoOrientation;
 }
 
 - (void)btnRegisterClicked {
     AVCaptureConnection *stillImageConnection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
-    UIDeviceOrientation curDeviceOrientation = [[UIDevice currentDevice] orientation];
-    AVCaptureVideoOrientation avcaptureOrientation = [self avOrientationForDeviceOrientation:curDeviceOrientation];
-    [stillImageConnection setVideoOrientation:avcaptureOrientation];
+    [stillImageConnection setVideoOrientation:self.previewLayer.connection.videoOrientation];
     [stillImageConnection setVideoScaleAndCropFactor:self.effectiveScale];
     
     __weak __block typeof(self) weakSelf = self;
@@ -328,8 +349,6 @@
     }
 }
 
-
-
 - (BOOL)prefersStatusBarHidden {
     return NO;
 }
@@ -348,8 +367,16 @@
     return is_X;
 }
 
+- (CGFloat)safeSpace {
+  if (@available(iOS 11.0, *)) {
+    return [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom;
+  } else {
+    return 0;
+  }
+}
+
 - (CGFloat)bottonHeight {
-    return [self is_iPhoneX] ? 88 : 80;
+  return [self safeSpace] + 30 * NumberValue;
 }
 
 - (void)hideMessageAction {

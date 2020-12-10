@@ -66,7 +66,6 @@
     self.navigationController.navigationBarHidden = NO;
 }
 
-
 // 1、检查权限
 - (void)checkPhotoAuthorization {
     
@@ -169,7 +168,6 @@
 - (void)refreshAlbumListAction {
     __weak __block typeof(self) weakSelf = self;
     [SKSPhotoTool.shared getAllAlbumsWithConfig:self.config Completion:^(NSArray<SKSAlbumModel *> * _Nonnull albumArray) {
-        NSLog(@"专辑数量 = %@", @(albumArray.count));
         self.albumArray = albumArray;
         [self.tableView reloadData];
         if (albumArray.count == 0) {
@@ -249,7 +247,6 @@
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
     return UIStatusBarAnimationNone;
 }
-
 
 #pragma mark - 懒加载
 - (UITableView *)tableView {

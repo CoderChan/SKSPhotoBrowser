@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SKSPhotoConfig.h"
 
-#define NumberValue (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone ? 1 : 1.5)
+#define NumberValue (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone ? 1.0 : 1.5)
 
 @interface SKSPhotoBrowser : NSObject
 

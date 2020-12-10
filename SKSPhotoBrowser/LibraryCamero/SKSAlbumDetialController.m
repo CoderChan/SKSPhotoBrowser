@@ -73,6 +73,7 @@
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.model.assetArray.count - 1 inSection:0];
         [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
     });
+    
 }
 
 #pragma mark - 网格代理

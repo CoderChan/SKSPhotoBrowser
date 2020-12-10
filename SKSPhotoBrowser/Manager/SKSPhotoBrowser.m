@@ -36,6 +36,10 @@
     return _sharedManager;
 }
 
+- (void)dealloc {
+  [NSNotificationCenter.defaultCenter removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
 #pragma mark - 弹出选择框
 - (void)showInView:(UIViewController *)controller Config:(SKSPhotoConfig *)config Completion:(SKSCompletionBlock)completion {
     
@@ -55,28 +59,44 @@
     self.config = config;
     self.completion = completion;
     self.fromController = controller;
-    
+  
+  if (UIApplication.sharedApplication.statusBarOrientation == UIInterfaceOrientationPortrait) {
     // 根据类型弹出对应的选择器
     if (self.config.pickType == Camero) {
         [self presentCameroAction];
     }else{
         [self presentPhotoAction];
     }
+  }else{
+    [UIDevice.currentDevice beginGeneratingDeviceOrientationNotifications];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(deviceOrientationChanged) name:UIDeviceOrientationDidChangeNotification object:nil];
+    NSLog(@"请在调用前设置为竖屏");
+  }
     
+}
+
+- (void)deviceOrientationChanged {
+  // 根据类型弹出对应的选择器
+  if (self.config.pickType == Camero) {
+      [self presentCameroAction];
+  }else{
+      [self presentPhotoAction];
+  }
 }
 
 - (void)presentCameroAction {
     
+    __weak __block typeof(self) weakSelf = self;
     SKSCameroViewController *photoAlbum = [[SKSCameroViewController alloc]initWithConfig:self.config Completion:^(NSArray<UIImage *> * _Nonnull imageArray, NSString * _Nonnull errorMsg) {
-        if (self.completion) {
-            self.completion(imageArray, errorMsg);
+        if (weakSelf.completion) {
+          weakSelf.completion(imageArray, errorMsg);
         }
     }];
+  
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:photoAlbum];
     nav.modalPresentationStyle = UIModalPresentationFullScreen;
     [self.fromController presentViewController:nav animated:YES completion:nil];
 }
-
 
 - (void)presentPhotoAction {
     __weak __block typeof(self) weakSelf = self;
