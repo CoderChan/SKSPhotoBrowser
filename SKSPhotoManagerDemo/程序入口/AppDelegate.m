@@ -44,7 +44,7 @@
 //    }else{
 //        return UIInterfaceOrientationMaskLandscape;
 //    }
-    return UIInterfaceOrientationMaskLandscape;
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end

@@ -352,6 +352,7 @@
 - (UIView *)imageWrap {
     if (!_imageWrap) {
         _imageWrap = [[UIView alloc] initWithFrame:CGRectZero];
+        _imageWrap.backgroundColor = [UIColor clearColor];
         
         UIImageView *topLeft = [[UIImageView alloc] initWithImage:[SKSPhotoResource imageNamed:@"sks_photo_top_left"]];
         topLeft.tag = 0;

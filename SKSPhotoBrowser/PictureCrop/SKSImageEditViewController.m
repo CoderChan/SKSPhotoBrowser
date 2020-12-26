@@ -76,24 +76,29 @@ static inline UIEdgeInsets hq_safeAreaInset() {
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    [self.captureView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(self.editViewSize.width));
-        make.height.equalTo(@(self.editViewSize.height));
-        make.centerY.equalTo(self.view).offset(-24 * NumberValue);
-        make.centerX.equalTo(self.view);
-    }];
+    __weak __block typeof(self) weakSelf = self;
     
-    [self.actionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(@0);
-        make.height.equalTo(@(49 * NumberValue + hq_safeAreaInset().bottom));
-    }];
+    CGFloat actionHeight = 49 * NumberValue + hq_safeAreaInset().bottom;
     
     [self.editView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@(self.editViewSize.width));
         make.height.equalTo(@(self.editViewSize.height));
-        make.top.equalTo(@((CGFloat)(hq_safeAreaInset().top + self.topSpace)));
+        make.centerY.equalTo(weakSelf.view).offset(-actionHeight);
         make.centerX.equalTo(@0);
     }];
+    
+    [self.captureView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(weakSelf.editViewSize.width));
+        make.height.equalTo(@(weakSelf.editViewSize.height));
+        make.centerY.equalTo(weakSelf.editView.mas_centerY);
+        make.centerX.equalTo(weakSelf.view);
+    }];
+    
+    [self.actionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(@0);
+        make.height.equalTo(@(actionHeight));
+    }];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -301,7 +306,7 @@ static inline UIEdgeInsets hq_safeAreaInset() {
 
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 10, self.editViewSize.width, self.editViewSize.height)];
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.editViewSize.width, self.editViewSize.height)];
         
         _scrollView.delegate = self;
         _scrollView.layer.masksToBounds = NO;

@@ -22,7 +22,6 @@
     if (self = [super init]) {
         
         self.backgroundColor = [UIColor colorWithRed:(55)/255.0f green:(55)/255.0f blue:(55)/255.0f alpha:(1)];
-//        self.backgroundColor = [UIColor purpleColor];
         
 //        [self addSubview:self.rotateButton];
         [self addSubview:self.cancelButton];
