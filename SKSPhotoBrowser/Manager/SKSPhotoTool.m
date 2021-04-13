@@ -137,7 +137,7 @@
         // PHImageResultIsDegradedKey = YES时，低质量图片
         BOOL canclled = [[info objectForKey:PHImageResultIsDegradedKey] boolValue];
         if (!canclled && result) {
-            result = [self scaleImage:result toSize:photoSize];
+            result = [weakSelf scaleImage:result toSize:photoSize];
             result = [weakSelf fixOrientation:result];
             if (completion) {
                 completion(result, info, [[info objectForKey:PHImageResultIsDegradedKey] boolValue]);
@@ -157,8 +157,8 @@
                 [PHImageManager.defaultManager requestImageDataForAsset:asset options:options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
                     NSLog(@"requestImageDataForAsset returned info(%@)", info);
                     UIImage *resultImage = [UIImage imageWithData:imageData];
-                    resultImage = [self scaleImage:resultImage toSize:photoSize];
-                    resultImage = [self fixOrientation:resultImage];
+                    resultImage = [weakSelf scaleImage:resultImage toSize:photoSize];
+                    resultImage = [weakSelf fixOrientation:resultImage];
                     if (completion) {
                         completion(resultImage, info, NO);
                     }

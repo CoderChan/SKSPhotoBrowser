@@ -75,20 +75,21 @@
 }
 
 - (void)addConstraint {
+    __weak __block typeof(self) weakSelf = self;
     [self.coverImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(15);
-        make.centerY.equalTo(self.mas_centerY);
-        make.top.equalTo(self.mas_top).offset(10);
+        make.left.equalTo(weakSelf.mas_left).offset(15);
+        make.centerY.equalTo(weakSelf.mas_centerY);
+        make.top.equalTo(weakSelf.mas_top).offset(10);
         make.width.equalTo(@([SKSAlbumTableViewCell cellHeight]));
     }];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.coverImgView.mas_right).offset(15);
-        make.bottom.equalTo(self.mas_centerY);
+        make.left.equalTo(weakSelf.coverImgView.mas_right).offset(15);
+        make.bottom.equalTo(weakSelf.mas_centerY);
         make.height.equalTo(@20);
     }];
     [self.countLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.nameLabel.mas_left);
-        make.top.equalTo(self.mas_centerY).offset(3);
+        make.left.equalTo(weakSelf.nameLabel.mas_left);
+        make.top.equalTo(weakSelf.mas_centerY).offset(3);
         make.height.equalTo(@16);
     }];
 }

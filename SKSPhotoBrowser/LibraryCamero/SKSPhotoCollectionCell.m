@@ -108,14 +108,15 @@
 }
 
 - (void)addConstraint {
+    __weak __block typeof(self) weakSelf = self;
     [self.coverImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self);
+        make.edges.equalTo(weakSelf);
     }];
     
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView);
-        make.bottom.equalTo(self.contentView);
-        make.right.equalTo(self.contentView);
+        make.left.equalTo(weakSelf.contentView);
+        make.bottom.equalTo(weakSelf.contentView);
+        make.right.equalTo(weakSelf.contentView);
         make.height.equalTo(@(17));
     }];
 }

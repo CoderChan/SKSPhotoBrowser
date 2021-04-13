@@ -103,6 +103,7 @@
     self.emptyLabel.text = message;
     CGFloat lockSize = UIScreen.mainScreen.bounds.size.width * 0.45;
     
+    __weak __block typeof(self) weakSelf = self;
     [self.emptyButton setTitle:title forState:UIControlStateNormal];
     [self.view addSubview:self.emptyImgView];
     [self.view addSubview:self.emptyLabel];
@@ -111,24 +112,24 @@
     self.emptyImgView.hidden = NO;
     self.emptyButton.hidden = title.length > 0 ? NO : YES;
     [self.emptyImgView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view).offset(-64);
+        make.centerX.equalTo(weakSelf.view);
+        make.centerY.equalTo(weakSelf.view).offset(-64);
         make.width.equalTo(@(lockSize));
         make.height.equalTo(@(lockSize));
     }];
     
     [self.emptyButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.emptyImgView.mas_bottom).offset(8);
-        make.centerX.equalTo(self.view.mas_centerX);
+        make.top.equalTo(weakSelf.emptyImgView.mas_bottom).offset(8);
+        make.centerX.equalTo(weakSelf.view.mas_centerX);
         make.width.equalTo(@(180));
         make.height.equalTo(@(44));
     }];
     
     CGFloat leftOff = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 120 : 30;
     [self.emptyLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-      make.top.equalTo(self.emptyButton.mas_bottom).offset(15);
-      make.centerX.equalTo(self.emptyImgView.mas_centerX);
-      make.left.equalTo(self.view.mas_left).offset(leftOff);
+      make.top.equalTo(weakSelf.emptyButton.mas_bottom).offset(15);
+      make.centerX.equalTo(weakSelf.emptyImgView.mas_centerX);
+      make.left.equalTo(weakSelf.view.mas_left).offset(leftOff);
     }];
     
 }
@@ -141,14 +142,15 @@
 
 // 2、加载子控件
 - (void)setupSubViews {
+    __weak __block typeof(self) weakSelf = self;
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.view addSubview:self.tableView];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+        make.edges.equalTo(weakSelf.view);
     }];
     
-    [self refreshAlbumListAction];
+    [weakSelf refreshAlbumListAction];
 }
 
 - (BOOL)is_iPhoneX {
@@ -168,13 +170,13 @@
 - (void)refreshAlbumListAction {
     __weak __block typeof(self) weakSelf = self;
     [SKSPhotoTool.shared getAllAlbumsWithConfig:self.config Completion:^(NSArray<SKSAlbumModel *> * _Nonnull albumArray) {
-        self.albumArray = albumArray;
-        [self.tableView reloadData];
+        weakSelf.albumArray = albumArray;
+        [weakSelf.tableView reloadData];
         if (albumArray.count == 0) {
-            [self showEmptyViewWithButtonTitle:nil Message:@"暂无有图片的相册专辑" ClickBlock:nil];
+            [weakSelf showEmptyViewWithButtonTitle:nil Message:@"暂无有图片的相册专辑" ClickBlock:nil];
             return ;
         }
-        SKSAlbumModel *model = self.albumArray.firstObject;
+        SKSAlbumModel *model = weakSelf.albumArray.firstObject;
         SKSAlbumDetialController *album = [[SKSAlbumDetialController alloc]initWithModel:model Config:weakSelf.config Completion:^(NSArray<UIImage *> * _Nonnull imageArray, NSString * _Nonnull errorMsg) {
             if (weakSelf.completionBlock) {
                 weakSelf.completionBlock(imageArray, errorMsg);

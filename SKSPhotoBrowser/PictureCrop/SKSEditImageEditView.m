@@ -42,11 +42,12 @@
 }
 
 - (void)makeConstraints {
+    __weak __block typeof(self) weakSelf = self;
     [self.maskView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@(-self.margin.top));
-        make.left.equalTo(@(-self.margin.left));
-        make.width.equalTo(@(self.previewSize.width + self.margin.left + self.margin.right));
-        make.height.equalTo(@(self.previewSize.height + self.margin.top + self.margin.bottom));
+        make.top.equalTo(@(-weakSelf.margin.top));
+        make.left.equalTo(@(-weakSelf.margin.left));
+        make.width.equalTo(@(weakSelf.previewSize.width + self.margin.left + self.margin.right));
+        make.height.equalTo(@(weakSelf.previewSize.height + self.margin.top + self.margin.bottom));
     }];
     
     [self.preView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -61,16 +62,18 @@
 
 #pragma mark - public method
 - (void)maskViewShowWithDuration:(CGFloat)duration {
+    __weak __block typeof(self) weakSelf = self;
     if (self.maskViewAnimation) {
         [UIView animateWithDuration:duration animations:^{
-            self.maskView.alpha = 1;
+            weakSelf.maskView.alpha = 1;
         }];
     }
 }
 - (void)maskViewHideWithDuration:(CGFloat)duration {
+    __weak __block typeof(self) weakSelf = self;
     if (self.maskViewAnimation) {
         [UIView animateWithDuration:duration animations:^{
-            self.maskView.alpha = 0;
+            weakSelf.maskView.alpha = 0;
         }];
     }
 }
@@ -212,15 +215,15 @@
         [self.delegate editView:self anchorPointIndex:touches.anyObject.view.tag rect:self.lineWrap.frame];
     }
     
-    
+    __weak __block typeof(self) weakSelf = self;
     [UIView animateWithDuration:.2f animations:^{
-        self.lineWrap.transform = CGAffineTransformMakeScale(self.previewSize.width/self.lineWrap.frame.size.width, self.previewSize.height/self.lineWrap.frame.size.height);
+        weakSelf.lineWrap.transform = CGAffineTransformMakeScale(weakSelf.previewSize.width/weakSelf.lineWrap.frame.size.width, weakSelf.previewSize.height/weakSelf.lineWrap.frame.size.height);
     } completion:^(BOOL finished) {
-        self.isMoving = NO;
-        self.imageWrap.hidden = NO;
-        self.lineWrap.layer.anchorPoint = CGPointMake(.5f, .5f);
-        self.lineWrap.transform = CGAffineTransformIdentity;
-        self.lineWrap.frame = CGRectMake(0, 0, self.previewSize.width, self.previewSize.height);
+        weakSelf.isMoving = NO;
+        weakSelf.imageWrap.hidden = NO;
+        weakSelf.lineWrap.layer.anchorPoint = CGPointMake(.5f, .5f);
+        weakSelf.lineWrap.transform = CGAffineTransformIdentity;
+        weakSelf.lineWrap.frame = CGRectMake(0, 0, weakSelf.previewSize.width, weakSelf.previewSize.height);
     }];
 }
 

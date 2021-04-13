@@ -81,8 +81,8 @@ static inline UIEdgeInsets hq_safeAreaInset() {
     CGFloat actionHeight = 49 * NumberValue + hq_safeAreaInset().bottom;
     
     [self.editView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(self.editViewSize.width));
-        make.height.equalTo(@(self.editViewSize.height));
+        make.width.equalTo(@(weakSelf.editViewSize.width));
+        make.height.equalTo(@(weakSelf.editViewSize.height));
         make.centerY.equalTo(weakSelf.view).offset(-actionHeight);
         make.centerX.equalTo(@0);
     }];
@@ -214,29 +214,30 @@ static inline UIEdgeInsets hq_safeAreaInset() {
 #pragma mark - 旋转图片
 - (void)rotateScrollView:(NSInteger)times {
     self.view.userInteractionEnabled = NO;
+    __weak __block typeof(self) weakSelf = self;
     [UIView animateWithDuration:.3f animations:^{
-        self.scrollView.transform = CGAffineTransformRotate(self.scrollView.transform, -M_PI_2);
+        weakSelf.scrollView.transform = CGAffineTransformRotate(weakSelf.scrollView.transform, -M_PI_2);
     } completion:^(BOOL finished) {
-        if (self.editViewSize.width != self.editViewSize.height) {
-            [self.scrollView setZoomScale:1.f animated:YES];
-            [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+        if (weakSelf.editViewSize.width != weakSelf.editViewSize.height) {
+            [weakSelf.scrollView setZoomScale:1.f animated:YES];
+            [weakSelf.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
             [UIView animateWithDuration:.3f animations:^{
-                self.scrollView.frame = CGRectMake(0, 0, self.editViewSize.width, self.editViewSize.height);
+                weakSelf.scrollView.frame = CGRectMake(0, 0, weakSelf.editViewSize.width, weakSelf.editViewSize.height);
                 if (times % 2 == 1) {
-                    if (self.editViewSize.width * (self.imageViewOriginSize.width/self.imageViewOriginSize.height) >= self.editViewSize.height) {
-                        self.imageView.frame = CGRectMake(0, 0, self.editViewSize.width * (self.imageViewOriginSize.width/self.imageViewOriginSize.height), self.editViewSize.width);  //宽拉满
+                    if (weakSelf.editViewSize.width * (weakSelf.imageViewOriginSize.width/weakSelf.imageViewOriginSize.height) >= weakSelf.editViewSize.height) {
+                        weakSelf.imageView.frame = CGRectMake(0, 0, weakSelf.editViewSize.width * (weakSelf.imageViewOriginSize.width/weakSelf.imageViewOriginSize.height), weakSelf.editViewSize.width);  //宽拉满
                     } else {
-                        self.imageView.frame = CGRectMake(0, 0, self.editViewSize.height, self.editViewSize.height * (self.imageViewOriginSize.height / self.imageViewOriginSize.width)); //高拉满
+                        weakSelf.imageView.frame = CGRectMake(0, 0, weakSelf.editViewSize.height, weakSelf.editViewSize.height * (weakSelf.imageViewOriginSize.height / weakSelf.imageViewOriginSize.width)); //高拉满
                     }
                 } else {
-                    self.imageView.frame = CGRectMake(0, 0, self.imageViewOriginSize.width, self.imageViewOriginSize.height);
+                    weakSelf.imageView.frame = CGRectMake(0, 0, weakSelf.imageViewOriginSize.width, weakSelf.imageViewOriginSize.height);
                 }
             } completion:^(BOOL finished) {
-                self.scrollView.contentSize = self.imageView.frame.size;
-                self.view.userInteractionEnabled = YES;
+                weakSelf.scrollView.contentSize = weakSelf.imageView.frame.size;
+                weakSelf.view.userInteractionEnabled = YES;
             }];
         } else {
-            self.view.userInteractionEnabled = YES;
+            weakSelf.view.userInteractionEnabled = YES;
         }
     }];
     

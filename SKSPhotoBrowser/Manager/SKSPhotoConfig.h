@@ -34,6 +34,10 @@ typedef void (^SKSCompletionBlock)(NSArray <UIImage *>*imageArray, NSString *err
 /// 初始化
 + (instancetype)defaultConfig;
 
+- (instancetype)init NS_UNAVAILABLE;
+
++ (instancetype)new NS_UNAVAILABLE;
+
 /// 选择来源，默认矩形框：SquareBorder
 @property (nonatomic, assign) SKSPhotoPickType pickType;
 
