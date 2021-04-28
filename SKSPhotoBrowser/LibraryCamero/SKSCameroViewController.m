@@ -131,7 +131,7 @@
 - (void)addLayerAction {
     
 //    BOOL is_pad = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ? YES : NO;
-    if (self.config.editBorderType == SquareBorder) {
+    if (self.config.editBorderType == SKSPhotoBorderTypeSquare) {
 //        CGFloat left = is_pad ? 80 : 35;
 //        CGFloat width = self.view.frame.size.width - left * 2;
 //        CGFloat height = width / 0.75;
@@ -139,7 +139,7 @@
 //        layerIcon.frame = CGRectMake(left, (self.view.frame.size.height - height) / 2, width, height);
 //        layerIcon.layer.position = CGPointMake(self.view.frame.size.width / 2, (self.view.frame.size.height - [self bottonHeight]) / 2);
 //        [self.view.layer addSublayer:layerIcon.layer];
-    }else if (self.config.editBorderType == CircleBorder){
+    }else if (self.config.editBorderType == SKSPhotoBorderTypeCircle){
         
     }else {
         // 没有边框，全景
@@ -171,7 +171,7 @@
         }];
     }else{
         // 允许访问
-        if (self.config.editBorderType != NoneBorder) {
+        if (self.config.editBorderType != SKSPhotoBorderTypeNone) {
             [self addLayerAction];
         }
         [self initAVCaptureSession]; //设置相机属性

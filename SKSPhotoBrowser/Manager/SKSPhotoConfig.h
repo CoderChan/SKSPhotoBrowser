@@ -11,15 +11,15 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
-    CameroAndPhoto = 0,  // 拍摄和相册一起
-    Camero = 1,          // 拍摄选图
-    Photo = 2            // 相册里选择
+    SKSPhotoPickTypeCameroAndPhoto = 0,  // 拍摄和相册一起
+    SKSPhotoPickTypeCamero = 1,          // 拍摄选图
+    SKSPhotoPickTypePhoto = 2            // 相册里选择
 } SKSPhotoPickType;
 
 typedef enum : NSUInteger {
-    NoneBorder = 0,       // 没有边框
-    SquareBorder = 1,     // 矩形边框
-    CircleBorder = 2      // 圆形边框
+    SKSPhotoBorderTypeNone = 0,       // 没有边框
+    SKSPhotoBorderTypeSquare = 1,     // 矩形边框
+    SKSPhotoBorderTypeCircle = 2      // 圆形边框
 } SKSPhotoBorderType;
 
 /// 完成的回调

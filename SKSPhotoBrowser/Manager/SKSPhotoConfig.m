@@ -13,8 +13,8 @@
 
 + (instancetype)defaultConfig {
     SKSPhotoConfig *config = [SKSPhotoConfig new];
-    config.pickType = CameroAndPhoto;
-    config.editBorderType = SquareBorder;
+    config.pickType = SKSPhotoPickTypePhoto;
+    config.editBorderType = SKSPhotoBorderTypeSquare;
     config.editBorderSize = CGSizeMake(300, 300);
     config.photoCount = 1;
     config.allowPickingImage = YES;

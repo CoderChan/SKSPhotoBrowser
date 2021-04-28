@@ -56,7 +56,7 @@
     __weak __block typeof(self) weakSelf = self;
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         SKSPhotoConfig *config = [SKSPhotoConfig defaultConfig];
-        config.pickType = Camero;
+        config.pickType = SKSPhotoPickTypeCamero;
         config.editBorderSize = CGSizeMake(250, 250);
         [SKSPhotoBrowser.shared showInView:self Config:config Completion:^(NSArray<UIImage *> * _Nonnull imageArray, NSString * _Nonnull errorMsg) {
             if (errorMsg.length > 0) {
@@ -69,7 +69,7 @@
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"从相册中选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         SKSPhotoConfig *config = [SKSPhotoConfig defaultConfig];
         config.editBorderSize = CGSizeMake(200, 200);
-        config.pickType = Photo;
+        config.pickType = SKSPhotoPickTypePhoto;
         config.isDragEditBorder = NO;
         [SKSPhotoBrowser.shared showInView:self Config:config Completion:^(NSArray<UIImage *> *imageArray, NSString *errorMsg) {
             if (errorMsg.length > 0) {

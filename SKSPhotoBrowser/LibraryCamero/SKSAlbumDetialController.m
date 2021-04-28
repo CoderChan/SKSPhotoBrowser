@@ -107,7 +107,7 @@
         cell.progress = !error ? progress : 1;
     } Completion:^(UIImage *image) {
         if (image == nil) { return; }
-        if (weakSelf.config.editBorderType == NoneBorder) {
+        if (weakSelf.config.editBorderType == SKSPhotoBorderTypeNone) {
             // 没有编辑框，无须裁剪
             if (weakSelf.completionBlock) {
                 weakSelf.completionBlock(@[image], @"");

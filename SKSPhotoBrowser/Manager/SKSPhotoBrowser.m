@@ -43,7 +43,7 @@
 #pragma mark - 弹出选择框
 - (void)showInView:(UIViewController *)controller Config:(SKSPhotoConfig *)config Completion:(SKSCompletionBlock)completion {
     
-    if (config.editBorderType == CircleBorder) {
+    if (config.editBorderType == SKSPhotoBorderTypeSquare) {
         completion(@[], @"暂不支持圆形裁剪框");
         return;
     }
@@ -62,7 +62,7 @@
   
   if (UIApplication.sharedApplication.statusBarOrientation == UIInterfaceOrientationPortrait) {
     // 根据类型弹出对应的选择器
-    if (self.config.pickType == Camero) {
+    if (self.config.pickType == SKSPhotoPickTypeCamero) {
         [self presentCameroAction];
     }else{
         [self presentPhotoAction];
@@ -77,7 +77,7 @@
 
 - (void)deviceOrientationChanged {
   // 根据类型弹出对应的选择器
-  if (self.config.pickType == Camero) {
+  if (self.config.pickType == SKSPhotoPickTypeCamero) {
       [self presentCameroAction];
   }else{
       [self presentPhotoAction];
